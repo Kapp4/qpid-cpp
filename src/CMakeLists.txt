@@ -78,7 +78,7 @@ endif (NOT CMAKE_SYSTEM_NAME STREQUAL Windows AND BUILD_TESTING)
 # rubygen subdir is excluded from stable distributions
 # If the main AMQP spec is present, then check if ruby and python are
 # present, and if any sources have changed, forcing a re-gen of source code.
-find_file(QPID_AMQP_SPEC NAMES amqp.0-10-qpid-errata.stripped.xml PATHS ${qpid-cpp_SOURCE_DIR}/specs ${qpid-cpp_SOURCE_DIR}/../specs NO_DEFAULT_PATH)
+find_file(QPID_AMQP_SPEC NAMES amqp.0-10-qpid-errata.stripped.xml PATHS ${qpid-cpp_SOURCE_DIR}/specs ${qpid-cpp_SOURCE_DIR}/../specs NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
 mark_as_advanced(QPID_AMQP_SPEC)
 if (NOT QPID_AMQP_SPEC)
   message(FATAL_ERROR "Can't find amqp 0-10 spec for framing code generation")
