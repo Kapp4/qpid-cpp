@@ -106,7 +106,7 @@ else (regen_amqp)
   message(STATUS "No need to generate AMQP protocol sources")
 endif (regen_amqp)
 
-find_file(QPID_BROKER_MANAGEMENT_SPEC NAMES management-schema.xml PATHS ${CMAKE_CURRENT_SOURCE_DIR}/qpid/broker ${qpid-cpp_SOURCE_DIR}/../specs NO_DEFAULT_PATH)
+find_file(QPID_BROKER_MANAGEMENT_SPEC NAMES management-schema.xml PATHS ${CMAKE_CURRENT_SOURCE_DIR}/qpid/broker ${qpid-cpp_SOURCE_DIR}/../specs NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
 mark_as_advanced(QPID_BROKER_MANAGEMENT_SPEC)
 if (NOT QPID_BROKER_MANAGEMENT_SPEC)
   message(FATAL_ERROR "Can't find broker management spec for code generation")
